@@ -57,13 +57,13 @@ contract token2
         return totalSupply_;
     }
 
-    function approve(address spender_, uint value_) public onlyAdmin returns(bool success){
+    function approve(address spender_, uint value_) public  returns(bool success){
         allowed[msg.sender][spender_] = value_;
         // emit Approval(msg.sender, spender_, value_);
         return true;
     }
 
-    function allowance(address ownwer_, address spender_) public onlyAdmin view returns(uint remaining){
+    function allowance(address ownwer_, address spender_) public view returns(uint remaining){
         return allowed[ownwer_][spender_];
     }
 
